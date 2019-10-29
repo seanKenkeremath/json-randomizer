@@ -17,7 +17,7 @@ def main():
 		data = json.load(json_file)
 		randomize(data, randomness, [])
 		dirname = os.path.dirname(output_file_path)
-		if not os.path.exists(dirname):
+		if dirname and not os.path.exists(dirname):
 			os.makedirs(dirname)
 		with open(output_file_path, 'w') as outfile:
 			json.dump(data, outfile)
