@@ -21,7 +21,7 @@ def main():
 			os.makedirs(dirname)
 		with open(output_file_path, 'w') as outfile:
 			json.dump(data, outfile)
-		with open('paths.txt', 'w') as path_outfile:
+		with open(output_file_path + ".paths.txt", 'w') as path_outfile:
 			for i in range (0, len(path_list)):
 				path_outfile.write(path_list[i])
 				path_outfile.write("\n\n")

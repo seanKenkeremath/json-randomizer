@@ -17,7 +17,7 @@ If the third parameter is omitted the script will overwrite the source json file
 
 The file passed in will be overwritten with changes if no third parameter is passed in. If an outputfile is specified as the third parameter the source file will be left in tact and the modified file will be written to the specified file 
 
-The script will produce a `paths.txt` file that catalogues all changes made to the .json file
+The script will produce a `{outputfile}.paths.txt` file that catalogues all changes made to the .json file
 
 ## TODO
 
