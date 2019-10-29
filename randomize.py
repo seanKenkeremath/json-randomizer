@@ -1,5 +1,6 @@
 import json
 import sys
+import os
 from random import random
 from random import randint
 
@@ -9,10 +10,16 @@ path_list = []
 def main():
 	file_path = sys.argv[1]
 	randomness = float(sys.argv[2])
+	output_file_path = file_path
+	if len(sys.argv) > 3:
+		output_file_path = sys.argv[3]
 	with open(file_path) as json_file:
 		data = json.load(json_file)
 		randomize(data, randomness, [])
-		with open(file_path, 'w') as outfile:
+		dirname = os.path.dirname(output_file_path)
+		if not os.path.exists(dirname):
+			os.makedirs(dirname)
+		with open(output_file_path, 'w') as outfile:
 			json.dump(data, outfile)
 		with open('paths.txt', 'w') as path_outfile:
 			for i in range (0, len(path_list)):
